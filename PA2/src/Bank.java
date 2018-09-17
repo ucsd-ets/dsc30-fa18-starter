@@ -1,119 +1,193 @@
+import java.util.ArrayList;
+
 /**
  * The Bank class acts as the interface between a user and their money.
- * The Bank consists of a ArrayList of accounts and a interest rate for savings accounts.
+ * The Bank consists of an ArrayList of accounts and a interest rate for savings accounts.
  * Through this class users can create accounts, deposit to accounts,
  * withdraw from accounts, and transfer between accounts.
  */
 public class Bank {
+    private ArrayList<Account> accounts; // Structure holding all accounts.
+    private double savingsInterestRate; // The interest rate given to savings account holders as a percent
 
     /**
-     * Default constructor creates an empty accounts map and set initial interest rate to 0%
+     * Default constructor creates an empty accounts Array List and set initial interest rate to 0%
      */
     public Bank() {
-        //TODO: implement
+        // TODO
     }
 
     /**
      * Sets the savings interest rate
-     *
+     * @param rate The rate which will be the new savings interest rate
      */
     public void setSavingsInterest(double rate) {
-        //TODO: implement
+        // TODO
     }
 
     /**
-     * Returns the number of accounts this bank has
-     *
+     * Returns the number of checking accounts this bank has
+     * @return the number of checking accounts in this bank
      */
-    public int getNumberOfAccounts() {
-        //TODO: implement
+    public int getNumberOfCheckingAccounts() {
+        // TODO
         return 0;
     }
 
     /**
-     * Gets the account associated with accountID
-     *
+     * Returns the number of savings accounts this bank has
+     * @return the number of savings accounts in this bank
      */
-    private Account getAccount(String accountID) {
-        String noAccountMessage = " DOES NOT HAVE AN ACCOUNT!";
+    public int getNumberOfSavingsAccounts() {
+        // TODO
+        return 0;
+    }
 
-        //TODO: implement
+    /**
+     * Helper method to get the checking account associated with accountID
+     *
+     * @param accountID the id of the account to obtain
+     * @return If there exists an checking account with accountID return it. Otherwise return null
+     */
+    private Account getCheckingAccount(String accountID) {
+        // TODO
 
         return null;
     }
 
     /**
-     * Creates a checking account with the given accountID and
-     * returns true or false depending on success.
+     * Helper method to get the savings account associated with accountID
+     *
+     * @param accountID the id of the account to obtain
+     * @return If there exists an savings account with accountID return it. Otherwise return null
+     */
+    private Account getSavingsAccount(String accountID) {
+        // TODO
+
+        return null;
+    }
+
+    /**
+     * Creates a checking account with the given accountID and returns true or false depending on success.
+     * You also need to print the proper message in each case, check write up for more details.
      *
      * The accountID must not already be taken and the initialDeposit must be greater than $0
      *
+     * @param accountID The id the user wants associated to this new account.
+     * @param initialDeposit The starting balance of the new account in dollars
+     * @return True if account created successfully. False if not.
      */
     public boolean createCheckingAccount(String accountID, double initialDeposit) {
-        String minimumMessage = "The minimum initial deposit for a checking account was not met!";
+        String successMSG = "Successully created checking account for " + accountID  + ".";
+        String failMSG = accountID + " ALREADY HAD A CHECKING ACCOUNT!";
+        String minimumMSG = "THE MINIMUM INITIAL DEPOSIT FOR A CHECKING ACCOUNT WAS NOT MET!";
 
-        //TODO: implement
+        // TODO
 
         return false;
     }
 
     /**
-     * Creates a savings account with the given accountID and
-     * returns true or false depending on success.
+     * Creates a savings account with the given accountID and returns true or false depending on success.
+     * You also need to print the proper message in each case, check write up for more details.
      *
      * The accountID must not already be taken and the initialDeposit must be greater than $100
      *
+     * @param accountID The id the user wants associated to this new account.
+     * @param initialDeposit The starting balance of the new account in dollars
+     * @return True if account created successfully. False if not.
      */
     public boolean createSavingsAccount(String accountID, double initialDeposit) {
-        String minimumMessage = "The minimum initial deposit for a savings account was not met!";
-        //TODO: implement
+        String successMSG = "Successully created savings account for " + accountID  + ".";
+        String failMSG = accountID + " ALREADY HAD A SAVINGS ACCOUNT!";
+        String minimumMSG = "THE MINIMUM INITIAL DEPOSIT FOR A CHECKING ACCOUNT WAS NOT MET!";
+
+        // TODO
+
         return false;
+    }
+
+    /**
+     * Helper method to get the account and print proper messages if no account is found.
+     *
+     * @param accountID the given accountID
+     * @param isChecking true if is checking account, false otherwise
+     * @return the proper account
+     */
+    private Account getAccount(String accountID, boolean isChecking) {
+        String noCheckingMSG = accountID + " DOES NOT HAVE A CHECKING ACCOUNT!";
+        String noSavingsMSG = accountID + " DOES NOT HAVE A SAVINGS ACCOUNT!";
+
+        // TODO
+
+        return null;
     }
 
     /**
      * Adds money to the account associated with accountID
      *
+     * @param isChecking true if deposit to checking, false if to savings
+     * @param accountID the id of the account to add money too
+     * @param amount the amount of dollars to add to the account
+     * @return The new balance of the account after deposit. Null if no account exists with accountID
      */
-    public Double deposit(String accountID, double amount)  {
-        //TODO: implement
-        return 0.0;
+    public Double deposit(boolean isChecking, String accountID, double amount)  {
+        // TODO
+
+        return null;
     }
 
     /**
      * Removes money from the account associated with accountID
      *
+     * @param isChecking true if withdraw from checking, false if from savings
+     * @param accountID the id of the account to take money from
+     * @param amount the amount of dollars to add to the account
+     * @return The new balance of the account after withdrawal. Null if no account exists with accountID
      */
-    public Double withdraw(String accountID, double amount) {
-        //TODO: implement
-        return 0.0;
+    public Double withdraw(boolean isChecking, String accountID, double amount) {
+
+        // TODO
+
+        return null;
     }
 
     /**
-     * Moves money from an account to another account via "online" transfer.
-     * No check fees are charged.
+     * Moves money from an account to another account via "online" transfer. No check fees are charged.
      *
      * If either account does not exist the transfer will fail.
-     * If the fromAccount does not have enough funds or rejects the withdrawal for any other reason,
-     * the transfer fails.
+     * If the fromAccount does not have enough funds or rejects the withdrawal for any other reason the transfer fails.
      *
+     * @param fromAccountID the id of the account to take money from
+     * @param isFromChecking true if transfer from checking, false if from savings
+     * @param toAccountID the id of the account to put money in
+     * @param isToChecking true if transfer to checking, false if to savings
+     * @param amount the amount of dollars to add to the account
+     * @return Whether or not the transfer succeeded.
      */
-    public boolean onlineTransfer(String fromAccountID, String toAccountID, double amount) {
-        //TODO: implement
+    public boolean onlineTransfer(String fromAccountID, boolean isFromChecking, String toAccountID,
+                                  boolean isToChecking, double amount) {
+        // TODO
+
         return false;
     }
 
     /**
      * Moves money from an account to another account using a "check."
      *
-     * If either account does not exist the transfer will fail.
      * If the from account is not a checking account the transfer will fail.
-     * If the fromAccount does not have enough funds or rejects the withdrawal for any other reason,
-     * the transfer fails.
+     * If either account does not exist the transfer will fail.
+     * If the fromAccount does not have enough funds or rejects the withdrawal for any other reason the transfer fails.
      *
+     * @param fromAccountID the id of the account to take money from
+     * @param toAccountID the id of the account to put money in
+     * @param amount the amount of dollars to add to the account
+     * @return Whether or not the transfer succeeded.
      */
-    public boolean checkTransfer(String fromAccountID, String toAccountID, double amount) {
-        String notCheckingMessage = " IS NOT A CHECKING ACCOUNT!";
-        //TODO: implement
+    public boolean checkTransfer(String fromAccountID,boolean isFromChecking, String toAccountID,
+                                 boolean isToChecking, double amount) {
+        // TODO
+
         return false;
     }
 
@@ -121,15 +195,17 @@ public class Bank {
      * Adds interest to every savings account.
      */
     public void addInterest() {
-        //TODO: implement
+        // TODO
     }
 
     /**
-     * Prints the account information associated with accountID if an account exists.
+     * First, if accountID has a checking account, print its information. Then, if accountID has a savings account,
+     * print its information. Check write up for more details.
      *
+     * @param accountID the id of the account to obtain
      */
     public void printAccount(String accountID) {
-        //TODO: implement
+        // TODO
     }
 
 }
