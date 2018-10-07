@@ -22,22 +22,12 @@ public class SunshineMarket {
                 + emptyQueueTime + " time units.\n";
     }
 
-    /**
-     * Helper method to determine the state of all Queues
-     *
-     * @return true if all Queues are empty
-     */
     private static boolean allQueuesEmpty() {
         // TODO
 
         return false;
     }
 
-    /**
-     * Helper method to choose the shortest line
-     *
-     * @return Queue with the shortest line
-     */
     private static QueueADT getShortestLine() {
         // TODO
 

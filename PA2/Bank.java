@@ -114,7 +114,7 @@ public class Bank {
      * @param isChecking true if is checking account, false otherwise
      * @return the proper account
      */
-    private Account getAccount(String accountID, boolean isChecking) {
+    public Account getAccount(String accountID, boolean isChecking) {
         String noCheckingMSG = accountID + " DOES NOT HAVE A CHECKING ACCOUNT!";
         String noSavingsMSG = accountID + " DOES NOT HAVE A SAVINGS ACCOUNT!";
 
@@ -186,6 +186,7 @@ public class Bank {
      */
     public boolean checkTransfer(String fromAccountID,boolean isFromChecking, String toAccountID,
                                  boolean isToChecking, double amount) {
+        String shouldUseCheckingMSG = fromAccountID + " SHOULD USE A CHECKING ACCOUNT!"
         // TODO
 
         return false;
