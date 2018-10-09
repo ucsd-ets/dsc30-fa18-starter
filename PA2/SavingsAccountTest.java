@@ -61,7 +61,7 @@ public class SavingsAccountTest {
     @Test
     public void testAddInterest() {
         // Add 2% interest to Alex, 100 * (1 + 2 / 100) = 102
-        assertEquals(2, Alex.addInterest(2), EPSILON); // test return value
+        assertEquals(102, Alex.addInterest(2), EPSILON); // test return value
         assertEquals(102, Alex.getBalance(), EPSILON); // test new balance
     }
 }
