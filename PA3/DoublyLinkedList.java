@@ -138,7 +138,6 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     @Override
     public void add(int index, T element)
             throws IndexOutOfBoundsException, NullPointerException {
-
         //TODO: Implementation for throwing exceptions followed by 
         //implementation of adding the new data
     }
@@ -159,9 +158,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     @Override
     public boolean contains(Object element) {
         T data = (T)element;
-
         //TODO: Fill in implementation
-
         return false;
     }
 
@@ -172,13 +169,6 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
      */
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
-        //TODO: Modify this condition
-        boolean outOfBoundsCondition = false;
-
-        if (outOfBoundsCondition) {
-            throw new IndexOutOfBoundsException();
-        }
-
         //TODO: Fill in implementation to get the node at index
         return null;
     }
@@ -205,7 +195,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     }
 
     /**
-     * remove the element from position index in the list
+     * Remove the element from position index in the list
      *
      * TODO: javadoc comments
      */
@@ -216,7 +206,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     }
 
     /**
-     * Sets the value of an element at a certain index in the list.
+     * Set the value of an element at a certain index in the list.
      *
      * TODO: javadoc comments
      */
@@ -245,7 +235,6 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
      */
     public void splice(int index, DoublyLinkedList<T> otherList) throws IndexOutOfBoundsException {
         //TODO: Determine if index is valid
-
 
         //TODO: Splicing implementation. HINT: remember DoublyLinkedList's  have dummy nodes
     }
