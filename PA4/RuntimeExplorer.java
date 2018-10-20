@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.AbstractList;
-import java.util.ArrayList;
 
 /**
  * This class will explore the runtime of the method getNameCounts, and compare the performance
@@ -63,7 +62,7 @@ public class RuntimeExplorer {
      * @param readAll if true, read all words from given file. Otherwise, only read numWords
      * @return an ArrayList containing all the words from the given file
      */
-    public static ArrayList<String> readFile(String fileName, int numWords, boolean readAll){
+    public static LinkedList<String> readFile(String fileName, int numWords, boolean readAll){
 
         // TODO
     }
@@ -77,8 +76,8 @@ public class RuntimeExplorer {
      * @param words the given words from Pride and Prejudice
      * @return an ArrayList of Pair, which contains names with count of each name
      */
-    public static ArrayList<Pair> getNameCounts(AbstractList<String> names,
-                                                ArrayList<String> words) {
+    public static LinkedList<Pair> getNameCounts(AbstractList<String> names,
+                                                LinkedList<String> words) {
         // TODO
 
         return null;
@@ -113,7 +112,7 @@ public class RuntimeExplorer {
      * @return a sorted ArrayList of Pair, which contains names with count of each name. The pairs 
      *         should be in increasing order of name counts in pairs.
      */
-    public static ArrayList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
+    public static LinkedList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
 
         // TODO
 
@@ -126,7 +125,7 @@ public class RuntimeExplorer {
      *
      * @param sorted a sorted ArrayList of Pair, which contains names with count of each name.
      */
-    public static void printCharacterQuestion(ArrayList<Pair> sorted) {
+    public static void printCharacterQuestion(LinkedList<Pair> sorted) {
         // TODO
     }
 }
