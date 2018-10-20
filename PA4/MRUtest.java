@@ -12,16 +12,16 @@ import java.util.LinkedList;
 import static org.junit.Assert.*;
 
 /**
- * Test harness for the MRU class
+ * Test harness for the MRUList class
  *
  * @author TODO
  * @since TODO
  */
 public class MRUtest {
 
-    MRU<Character> alphabet;
-    MRU<String> l1;
-    MRU<String> l2;
+    MRUList<Character> alphabet;
+    MRUList<String> l1;
+    MRUList<String> l2;
     AbstractList<Integer> empty;
 
     /**
@@ -29,9 +29,9 @@ public class MRUtest {
      */
     @Before
     public void setup() {
-        alphabet = new MRU<>();
-        l1 = new MRU<>();
-        l2 = new MRU<>();
+        alphabet = new MRUList<>();
+        l1 = new MRUList<>();
+        l2 = new MRUList<>();
         for (char c = 'a'; c <= 'z'; c++) {
             alphabet.add(c);
         }

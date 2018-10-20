@@ -32,6 +32,7 @@ public class Pair{
      * Getter for the word in this pair
      *
      * @return the word in this pair
+     * @param word sd
      */
     public String getWord(){
         return word;
@@ -40,6 +41,7 @@ public class Pair{
     /**
      * Getter for the count in this pair
      * @return the number of occurrence of the word in this pair
+     *
      */
     public int getCount(){
         return count;

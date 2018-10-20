@@ -1,14 +1,18 @@
-import java.util.ArrayList;
+import java.util.AbstractList;
 
 public class Sorts {
 
     //TODO: Change methods to work on ArrayList<Pair> when ready
-    public static ArrayList<Integer> quickSort(ArrayList<Integer> list){
+    public static AbstractList<Integer> quickSort(AbstractList<Integer> list){
         //TODO: Implement quick sort
         return null;
     }
 
-    public static ArrayList<Integer> insertionSort(ArrayList<Integer> list){
+    public static AbstractList<Integer> insertionSort(AbstractList<Integer> list){
+        //TODO: Implement insertion sort
+        return null;
+    }
+    public static AbstractList<Integer> mergeSort(AbstractList<Integer> list){
         //TODO: Implement insertion sort
         return null;
     }

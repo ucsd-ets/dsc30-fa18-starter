@@ -51,6 +51,7 @@ public class RuntimeExplorer {
     public static AbstractList<String> readNames(String fileName, boolean useMRU){
 
         // TODO
+        return null;
     }
 
     /**
@@ -65,6 +66,7 @@ public class RuntimeExplorer {
     public static LinkedList<String> readFile(String fileName, int numWords, boolean readAll){
 
         // TODO
+        return null;
     }
 
     /**
