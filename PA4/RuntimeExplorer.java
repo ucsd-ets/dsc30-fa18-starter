@@ -97,7 +97,7 @@ public class RuntimeExplorer {
     public static void printRunTime(String listType, String fileName,
                                     int startSize, int incSize, int numTest, int eachTestTimes) {
 
-        System.out.println("Class: " + listType + " (" + fileType + ")");
+        System.out.println("Class: " + listType + " (" + fileName + ")");
         System.out.println("=================================");
 
         // TODO 
