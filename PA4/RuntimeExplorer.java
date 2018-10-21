@@ -48,25 +48,25 @@ public class RuntimeExplorer {
      * MRUList based on the given boolean useMRU.
      *
      * @param fileName the given file to be read
-     * @param useMRU if true, store names into MRUList. Otherwise, store names into LinkedList
-     * @return an LinkedList or MRUList containing all the names from the given file
+     * @param listType "LinkedList" or "MRUList" or "ArrayList" which will be used in getNameCounts()
+     * @return a LinkedList or MRUList or ArrayList containing all the names from the given file
      */
-    public static AbstractList<String> readNames(String fileName, boolean useMRU){
+    public static AbstractList<String> readNames(String fileName, String listType){
 
         // TODO
         return null;
     }
 
     /**
-     * This method will read certain number of words from the given file and store them into
-     * an ArrayList
+     * This method will read certain number of words from the given file (Pride and Prejudice)
+     * and store them into an ArrayList. 
      *
      * @param fileName the given file to be read
      * @param numWords the number of words to read from given file
      * @param readAll if true, read all words from given file. Otherwise, only read numWords
      * @return an ArrayList containing all the words from the given file
      */
-    public static ArrayList<String> readFile(String fileName, int numWords, boolean readAll){
+    public static ArrayList<String> readWords(String fileName, int numWords, boolean readAll){
 
         // TODO
         return null;
@@ -93,7 +93,7 @@ public class RuntimeExplorer {
      * Print run time of getNameCounts with different parameters. The only method you should time
      * is getNamesCounts(). (See details below)
      *
-     * @param listType LinkedList or MRUList which will be used in getNameCounts()
+     * @param listType "LinkedList" or "MRUList" or "ArrayList" which will be used in getNameCounts()
      * @param fileName the input file which contains names
      * @param startSize the initial size of words from Pride and Prejudice
      * @param incSize the increased size for each time we run the test
@@ -125,13 +125,14 @@ public class RuntimeExplorer {
      * Print the time it takes to sort nameCounts using Insertion Sort, Merge Sort or Quick Sort,
      * based on the given string sortAlg. 
      *
+     * @param namesCount the given ArrayList to sort
      * @param sortAlg if equals "QuickSort", use Quick Sort. If equals "MergeSort", use Merge Sort.
      *                If equals "InsertionSort", use Insertion Sort.
-     * @param eachTestTimes the number of times we run each test to take average runtime
-     * @return a sorted LinkedList of Pair, which contains names with count of each name. The pairs 
-     *         should be in increasing order of name counts in pairs.
+     * @oaram numPairs the number of pairs to sort
+     * @param testTimes the number of times we run each test to take average runtime
      */
-    public static ArrayList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
+    public static void printSortsTime(ArrayList<Pair> namesCount, String sortAlg, 
+                                                 int numPairs, int testTimes) {
         
         long totalTime = 0;
 
@@ -139,8 +140,22 @@ public class RuntimeExplorer {
 
         // TODO 
 
-        System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort nameCounts\n");
+        System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort " + numPairs +
+                           " pairs in nameCounts\n");
         return null;
+    }
+
+    /**
+     * Returns a deep copy of given ArrayList
+     *
+     * @param old the given old ArrayList
+     */
+    private ArrayList<Pair> deepCopyArrayList(ArrayList<Pair> old) {
+        ArrayList<Pair> copy = new ArrayList<Pair>(old.size());
+        for (Pair i : old){
+            copy.add(new Pair(i.getWord(), i.getCount()));
+        }
+        return copy;
     }
 
     /**
