@@ -1,46 +1,45 @@
 /**
- * This class defines a pair where the first element is a word and second element is the
- * number of occurrence of this word.
+ * This class defines a pair where the first element is a name and second element is the
+ * number of occurrence of this name.
  */
 public class Pair{
 
-    String word;
+    String name;
     int count;
 
     /**
-     * The constructor that creates a pair of the given word with number of occurrence as 1.
+     * The constructor that creates a pair of the given name with number of occurrence as 1.
      *
-     * @param word the given word
+     * @param name the given name
      */
-    public Pair(String word){
-        this.word = word;
+    public Pair(String name){
+        this.name = name;
         this.count = 1;
     }
 
     /**
-     * The constructor that creates a pair of the given word with the given number of occurrence.
+     * The constructor that creates a pair of the given name with the given number of occurrence.
      *
-     * @param word the given word
+     * @param Name the given name
      * @param count the given number of occurrence
      */
-    public Pair(String word, int count){
-        this.word = word;
+    public Pair(String name, int count){
+        this.name = name;
         this.count = count;
     }
 
     /**
-     * Getter for the word in this pair
+     * Getter for the name in this pair
      *
-     * @return the word in this pair
-     * @param word sd
+     * @return the name in this pair
      */
-    public String getWord(){
-        return word;
+    public String getName(){
+        return name;
     }
 
     /**
      * Getter for the count in this pair
-     * @return the number of occurrence of the word in this pair
+     * @return the number of occurrence of the name in this pair
      *
      */
     public int getCount(){
@@ -48,7 +47,7 @@ public class Pair{
     }
 
     /**
-     * Increase the number of occurrence of word in this pair by 1.
+     * Increase the number of occurrence of name in this pair by 1.
      */
     public void incrementCount(){
         this.count++;

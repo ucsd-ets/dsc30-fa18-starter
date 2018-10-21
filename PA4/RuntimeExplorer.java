@@ -20,7 +20,7 @@ public class RuntimeExplorer {
     // TODO: You will need many constant variables declared here, always specify their meanings
 
     // Then other non-constant variables, specify their meaning when necessary
-    static String prideAndPrejudice = "./src/PrideAndPredjudice.txt";
+    static String prideAndPrejudice = "./src/PrideAndPrejudice.txt";
 
     // TODO: add variables that stores the filename of names files like above
 
@@ -77,10 +77,10 @@ public class RuntimeExplorer {
      *
      * @param names the given names to find number of occurrence in words
      * @param words the given words from Pride and Prejudice
-     * @return an LinkedList of Pair, which contains names with count of each name
+     * @return an ArrayList of Pair, which contains names with count of each name
      */
-    public static LinkedList<Pair> getNameCounts(AbstractList<String> names,
-                                                LinkedList<String> words) {
+    public static ArrayList<Pair> getNameCounts(AbstractList<String> names,
+                                                ArrayList<String> words) {
         // TODO
 
         return null;
@@ -113,6 +113,9 @@ public class RuntimeExplorer {
         long totalTime = startTime - endTime;
 
         // TODO 
+
+        // print new line after each test
+        System.out.print("\n");
     }
 
     /**
