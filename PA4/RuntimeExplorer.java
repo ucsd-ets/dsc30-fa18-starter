@@ -105,16 +105,14 @@ public class RuntimeExplorer {
         System.out.println("Class: " + listType + " (" + fileName + ")");
         System.out.println("=================================");
 
-        // Example of how to time your program
+        // Example of how to time your program in milliseconds
 
         long startTime = System.currentTimeMillis();
 
-        // The program that you time goes here
+        // TODO: The program that you time goes here
 
         long endTime = System.currentTimeMillis();
         long totalTime = startTime - endTime;
-
-        // TODO 
 
         // print new line after each test
         System.out.print("\n");
@@ -137,7 +135,14 @@ public class RuntimeExplorer {
 
         System.out.println("Sorting nameCounts using " + sortAlg);
 
-        // TODO 
+        // Example of how to time your program in nanoseconds
+
+        long startTime = System.nanoTime();
+
+        // TODO: The program that you time goes here
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
 
         System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort " + numPairs +
                            " pairs in nameCounts\n");
