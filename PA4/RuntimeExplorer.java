@@ -8,7 +8,7 @@ import java.util.AbstractList;
 
 /**
  * This class will explore the runtime of the method getNameCounts, and compare the performance
- * of LinkedList with MRUList. The method getNamesCounts returns an LinkedList of Pair, which
+ * of LinkedList with MRUList. The method getNamesCounts returns an ArrayList of Pair, which
  * contains names with count of each name that appears in Pride And Prejudice.
  *
  * This class will also explore the runtime of three sorting algorithm: Insertion Sort, Merge
@@ -30,9 +30,8 @@ public class RuntimeExplorer {
     /**
      * The main method that drives the RuntimeExplorer. 
      * Requirement: 
-     * 1. To help you establish good coding habits, in this assignment, you can only 
-     * delare local variables and call other methods in main. You should leave all the 
-     * implementaion part in your other methods, as this will keep your main method 
+     * 1. To help you establish good coding habits, in this assignment, you should leave 
+     * all the implementaion part in your other methods, as this will keep your main method 
      * short and clear. You will lose style points if this requirement is not met.
      * 2. Avoid magic number.
      *
@@ -45,7 +44,7 @@ public class RuntimeExplorer {
 
     /**
      * This method will read the names from the given file and store them into an LinkedList or
-     * MRUList based on the given boolean useMRU.
+     * MRUList or ArrayList based on the given String listType
      *
      * @param fileName the given file to be read
      * @param listType "LinkedList" or "MRUList" or "ArrayList" which will be used in getNameCounts()
