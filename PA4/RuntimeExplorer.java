@@ -55,36 +55,25 @@ public class RuntimeExplorer {
     }
 
     /**
-<<<<<<< HEAD
      * This method will read certain number of words from the given file and store them into
      * an ArrayList
-=======
-     * This method would read certain number of words from the given file and store them into
-     * an LinkedList
->>>>>>> 84f197706dd7a7aef491382bbdc10ee2bf341a05
      *
      * @param fileName the given file to be read
      * @param numWords the number of words to read from given file
      * @param readAll if true, read all words from given file. Otherwise, only read numWords
-     * @return an LinkedList containing all the words from the given file
+     * @return an ArrayList containing all the words from the given file
      */
-    public static LinkedList<String> readFile(String fileName, int numWords, boolean readAll){
+    public static ArrayList<String> readFile(String fileName, int numWords, boolean readAll){
 
         // TODO
         return null;
     }
 
     /**
-<<<<<<< HEAD
      * This method would return an ArrayList of pair. Each pair will contain a name from names 
      * list with its number of occurrence in the ArrayList words. You must implement this method 
      * as efficient as possible to save time later. Hint: consider using break or iterators 
      * to make it run faster
-=======
-     * This method would return an LinkedList of Pair, which contains names with count of each name
-     * that appears in the given LinkedList words. You must implement this method as efficient as 
-     * possible to save time later.  
->>>>>>> 84f197706dd7a7aef491382bbdc10ee2bf341a05
      *
      * @param names the given names to find number of occurrence in words
      * @param words the given words from Pride and Prejudice
@@ -136,13 +125,9 @@ public class RuntimeExplorer {
      * @return a sorted LinkedList of Pair, which contains names with count of each name. The pairs 
      *         should be in increasing order of name counts in pairs.
      */
-<<<<<<< HEAD
     public static ArrayList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
         
         long totalTime = 0;
-=======
-    public static LinkedList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
->>>>>>> 84f197706dd7a7aef491382bbdc10ee2bf341a05
 
         System.out.println("Sorting nameCounts using " + sortAlg);
 
@@ -158,7 +143,6 @@ public class RuntimeExplorer {
      *
      * @param sorted a sorted LinkedList of Pair, which contains names with count of each name.
      */
-<<<<<<< HEAD
     public static void printCharacterQuestion(ArrayList<Pair> sorted) {
         // TODO: change the variables below to proper value
         String mainChar = "";
@@ -169,9 +153,5 @@ public class RuntimeExplorer {
         System.out.println("The main character is " + mainChar);
         System.out.println("The second main character is " + secondChar);
         System.out.println("The third main character is " + thirdChar);
-=======
-    public static void printCharacterQuestion(LinkedList<Pair> sorted) {
-        // TODO
->>>>>>> 84f197706dd7a7aef491382bbdc10ee2bf341a05
     }
 }
