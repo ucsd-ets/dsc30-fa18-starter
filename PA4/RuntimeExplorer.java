@@ -7,7 +7,7 @@ import java.util.AbstractList;
 
 /**
  * This class will explore the runtime of the method getNameCounts, and compare the performance
- * of LinkedList with MRUList. The method getNamesCounts returns an ArrayList of Pair, which
+ * of LinkedList with MRUList. The method getNamesCounts returns an LinkedList of Pair, which
  * contains names with count of each name that appears in Pride And Prejudice.
  *
  * This class would also explore the runtime of three sorting algorithm: Insertion Sort, Merge
@@ -56,12 +56,12 @@ public class RuntimeExplorer {
 
     /**
      * This method would read certain number of words from the given file and store them into
-     * an ArrayList
+     * an LinkedList
      *
      * @param fileName the given file to be read
      * @param numWords the number of words to read from given file
      * @param readAll if true, read all words from given file. Otherwise, only read numWords
-     * @return an ArrayList containing all the words from the given file
+     * @return an LinkedList containing all the words from the given file
      */
     public static LinkedList<String> readFile(String fileName, int numWords, boolean readAll){
 
@@ -70,13 +70,13 @@ public class RuntimeExplorer {
     }
 
     /**
-     * This method would return an ArrayList of Pair, which contains names with count of each name
-     * that appears in the given ArrayList words. You must implement this method as efficient as 
+     * This method would return an LinkedList of Pair, which contains names with count of each name
+     * that appears in the given LinkedList words. You must implement this method as efficient as 
      * possible to save time later.  
      *
      * @param names the given names to find in words
      * @param words the given words from Pride and Prejudice
-     * @return an ArrayList of Pair, which contains names with count of each name
+     * @return an LinkedList of Pair, which contains names with count of each name
      */
     public static LinkedList<Pair> getNameCounts(AbstractList<String> names,
                                                 LinkedList<String> words) {
@@ -111,7 +111,7 @@ public class RuntimeExplorer {
      * @param sortAlg if equals "QuickSort", use Quick Sort. If equals "MergeSort", use Merge Sort.
      *                If equals "InsertionSort", use Insertion Sort.
      * @param eachTestTimes the number of times we run each test to take average runtime
-     * @return a sorted ArrayList of Pair, which contains names with count of each name. The pairs 
+     * @return a sorted LinkedList of Pair, which contains names with count of each name. The pairs 
      *         should be in increasing order of name counts in pairs.
      */
     public static LinkedList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
@@ -125,7 +125,7 @@ public class RuntimeExplorer {
      * Print the main character, the character appeared least times and the third main character
      * in Pride and Prejudice
      *
-     * @param sorted a sorted ArrayList of Pair, which contains names with count of each name.
+     * @param sorted a sorted LinkedList of Pair, which contains names with count of each name.
      */
     public static void printCharacterQuestion(LinkedList<Pair> sorted) {
         // TODO
