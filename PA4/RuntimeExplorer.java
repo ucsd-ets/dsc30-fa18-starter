@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.AbstractList;
 
@@ -22,7 +23,9 @@ public class RuntimeExplorer {
     // Then other non-constant variables, specify their meaning when necessary
     static String prideAndPrejudice = "./src/PrideAndPrejudice.txt";
 
-    // TODO: add variables that stores the filename of names files like above
+    static String smallNames = "./src/SmallNames.txt";
+    static String mediumNames = "./src/MediumNames.txt";
+    static String largeNames = "./src/LargeNames.txt";
 
     /**
      * The main method that drives the RuntimeExplorer. 
