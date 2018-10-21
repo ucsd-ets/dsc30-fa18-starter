@@ -11,12 +11,10 @@ import java.util.ArrayList;
  * of LinkedList with MRUList. The method getNamesCounts returns an ArrayList of Pair, which
  * contains names with count of each name that appears in Pride And Prejudice.
  *
- * This class would also explore the runtime of three sorting algorithm: Insertion Sort, Merge
+ * This class will also explore the runtime of three sorting algorithm: Insertion Sort, Merge
  * Sort and Quick Sort, by comparing the time it takes to sort the list of Pair returned 
  * by getNamesCounts
  *
- * @author Xindong Cai
- * @since ${May 4, 2018}
  */
 public class RuntimeExplorer {
 
@@ -29,10 +27,12 @@ public class RuntimeExplorer {
 
     /**
      * The main method that drives the RuntimeExplorer. 
-     * Requirement: To help you establish good coding habits, in this assignment, you can only 
+     * Requirement: 
+     * 1. To help you establish good coding habits, in this assignment, you can only 
      * delare local variables and call other methods in main. You should leave all the 
      * implementaion part in your other methods, as this will keep your main method 
      * short and clear. You will lose style points if this requirement is not met.
+     * 2. Avoid magic number.
      *
      * @param args the command line arguments
      */
@@ -42,7 +42,7 @@ public class RuntimeExplorer {
     }
 
     /**
-     * This method would read the names from the given file and store them into an LinkedList or
+     * This method will read the names from the given file and store them into an LinkedList or
      * MRUList based on the given boolean useMRU.
      *
      * @param fileName the given file to be read
@@ -55,7 +55,7 @@ public class RuntimeExplorer {
     }
 
     /**
-     * This method would read certain number of words from the given file and store them into
+     * This method will read certain number of words from the given file and store them into
      * an ArrayList
      *
      * @param fileName the given file to be read
@@ -69,11 +69,12 @@ public class RuntimeExplorer {
     }
 
     /**
-     * This method would return an ArrayList of Pair, which contains names with count of each name
-     * that appears in the given ArrayList words. You must implement this method as efficient as 
-     * possible to save time later.  
+     * This method would return an ArrayList of pair. Each pair will contain a name from names 
+     * list with its number of occurrence in the ArrayList words. You must implement this method 
+     * as efficient as possible to save time later. Hint: consider using break or iterators 
+     * to make it run faster
      *
-     * @param names the given names to find in words
+     * @param names the given names to find number of occurrence in words
      * @param words the given words from Pride and Prejudice
      * @return an ArrayList of Pair, which contains names with count of each name
      */
@@ -85,13 +86,14 @@ public class RuntimeExplorer {
     }
 
     /**
-     * Print run time of getNameCounts with different parameters (See details below)
+     * Print run time of getNameCounts with different parameters. The only method you should time
+     * is getNamesCounts(). (See details below)
      *
      * @param listType LinkedList or MRUList which will be used in getNameCounts()
      * @param fileName the input file which contains names
-     * @param startSize the initial size of words
+     * @param startSize the initial size of words from Pride and Prejudice
      * @param incSize the increased size for each time we run the test
-     * @param numTest the number of tests we need to run
+     * @param numTest the total number of tests we need to run
      * @param eachTestTimes the number of times we run each test to take average runtime
      */
     public static void printRunTime(String listType, String fileName,
@@ -99,6 +101,15 @@ public class RuntimeExplorer {
 
         System.out.println("Class: " + listType + " (" + fileName + ")");
         System.out.println("=================================");
+
+        // Example of how to time your program
+
+        long startTime = System.currentTimeMillis();
+
+        // The program that you time goes here
+
+        long endTime = System.currentTimeMillis();
+        long totalTime = startTime - endTime;
 
         // TODO 
     }
@@ -114,19 +125,32 @@ public class RuntimeExplorer {
      *         should be in increasing order of name counts in pairs.
      */
     public static ArrayList<Pair> printSortsTime(String sortAlg, int eachTestTimes) {
+        
+        long totalTime = 0;
 
-        // TODO
+        System.out.println("Sorting nameCounts using " + sortAlg);
 
+        // TODO 
+
+        System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort nameCounts\n");
         return null;
     }
 
     /**
-     * Print the main character, the character appeared least times and the third main character
+     * Print the main character, the second main character and the third main character
      * in Pride and Prejudice
      *
      * @param sorted a sorted ArrayList of Pair, which contains names with count of each name.
      */
     public static void printCharacterQuestion(ArrayList<Pair> sorted) {
-        // TODO
+        // TODO: change the variables below to proper value
+        String mainChar = "";
+        String secondChar = "";
+        String thirdChar = "";
+
+        System.out.println("In Pride and Prejudice: ");
+        System.out.println("The main character is " + mainChar);
+        System.out.println("The second main character is " + secondChar);
+        System.out.println("The third main character is " + thirdChar);
     }
 }
