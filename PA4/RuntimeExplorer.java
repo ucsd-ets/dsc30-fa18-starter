@@ -142,7 +142,6 @@ public class RuntimeExplorer {
 
         System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort " + numPairs +
                            " pairs in nameCounts\n");
-        return null;
     }
 
     /**
