@@ -20,7 +20,7 @@ public class Pair{
     /**
      * The constructor that creates a pair of the given name with the given number of occurrence.
      *
-     * @param Name the given name
+     * @param name the given name
      * @param count the given number of occurrence
      */
     public Pair(String name, int count){

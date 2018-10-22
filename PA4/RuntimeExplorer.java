@@ -142,7 +142,7 @@ public class RuntimeExplorer {
         // TODO: The program that you time goes here
 
         long endTime = System.nanoTime();
-        long totalTime = endTime - startTime;
+        totalTime = endTime - startTime;
 
         System.out.println(sortAlg + " takes " + totalTime + " nanoseconds to sort " + numPairs +
                            " pairs in nameCounts\n");
@@ -156,7 +156,7 @@ public class RuntimeExplorer {
     private ArrayList<Pair> deepCopyArrayList(ArrayList<Pair> old) {
         ArrayList<Pair> copy = new ArrayList<Pair>(old.size());
         for (Pair i : old){
-            copy.add(new Pair(i.getWord(), i.getCount()));
+            copy.add(new Pair(i.getName(), i.getCount()));
         }
         return copy;
     }
