@@ -7,7 +7,7 @@ public class Sorts {
         // TODO
     }
 
-    public static void MergeSort(ArrayList<Pair> list, int startIndex, int endIndex) {
+    public static void mergeSort(ArrayList<Pair> list, int startIndex, int endIndex) {
 
         // TODO
     }
