@@ -16,6 +16,15 @@ public class Firewall {
     public static void main(String args[]) {
 
         //TODO
+
+        // print statistics
+        System.out.println("False positive rate: ");
+
+        // Get the size of badURL in bytes
+        File badURL = new File(args[0]);
+        long inputSize = badURL.length();
+
+        System.out.println("Saved memory ratio: ");
     }
 
 }
