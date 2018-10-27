@@ -33,9 +33,7 @@ public interface IHashTable {
 	 * 2: marina, fifty
 	 * 3: table
 	 * 4:
-	 * 
-	 * @param out the output stream
-	 */
+     */
 	void printTable();
 	
 	/**
