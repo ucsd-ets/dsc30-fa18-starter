@@ -32,7 +32,7 @@ public class BloomFilter {
      * Helper method to set a bit in the table to 1, which is specified by the given byteIndex 
      * and bitIndex
      * @param byteIndex the index of the byte in hash table
-     * @param bitIndex the index of the bit in the byte at byteIndex
+     * @param bitIndex the index of the bit in the byte at byteIndex. Range is [0, 7]
      */
     private void setBit(int byteIndex, int bitIndex) {
         // set the bit at bitIndex of the byte at byteIndex
@@ -53,7 +53,7 @@ public class BloomFilter {
      * Helper method to get the bit value at the slot, which is specified by the given byteIndex 
      * and bitIndex
      * @param byteIndex the index of the byte in hash table
-     * @param bitIndex the index of the bit in the byte at byteIndex
+     * @param bitIndex the index of the bit in the byte at byteIndex. Range is [0, 7]
      */
     private int getSlot(int byteIndex, int bitIndex) {
         return (table[byteIndex] >> ((NUMBITS - 1) - bitIndex)) & 1;
