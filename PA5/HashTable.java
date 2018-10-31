@@ -31,7 +31,7 @@ public class HashTable implements IHashTable {
 		//TODO
 	}
 
-	public boolean contains(String value) {
+	public boolean lookup(String value) {
 		
 		//TODO
 	}
