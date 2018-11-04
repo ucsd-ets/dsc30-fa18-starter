@@ -9,7 +9,7 @@ public class dHeap<T extends Comparable<? super T>>
     private boolean isMaxHeap; //boolean to indicate whether heap is max or min
 
     /**
-     * Initializes a binary max heap with capacity = 7
+     * Initializes a binary max heap with capacity = 9
      */
     public dHeap() {
 
