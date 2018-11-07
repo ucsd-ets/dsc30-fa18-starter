@@ -1,35 +1,29 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
  * Implementation of KD tree which will be used in a KNN classifier
- *
- * @author TODO
- * @since TODO
  */
 public class KDTree {
 
-    private static final int DIVISOR = 2;
     private KDNode root; // root of this KD tree
     private int numDim; // number of dimension of given data points
     private int k; // number of nearest neighbors to find
-    private KDNode kthSmallestNodeInKNN;// Node with kth smallest distance to current query point in current KNN
-    private PriorityQueue<KDNode> KNN; // priority queue containing exactly k nearest neighbors
+    private double largestDisInKNN;// largest distance to current query point in the current KNN
+    private PriorityQueue<Point> KNN; // priority queue containing k nearest neighbors
     private int size;
     private int height;
 
     /**
      * Inner class which defines a KD node
      */
-    protected class KDNode implements Comparable<KDNode> {
+    protected class KDNode {
 
         KDNode left;
         KDNode right;
         KDNode parent;
         Point point; // the data point in this node
-        double squareDis; // square distance from point in this node to the current query point
 
         /**
          * Default constructor to create an empty KD node
@@ -56,7 +50,6 @@ public class KDTree {
 
         /**
          * Setter for left child
-         *
          * @param left the left child to be set
          */
         public void setLeft(KDNode left) {
@@ -74,7 +67,6 @@ public class KDTree {
 
         /**
          * Setter for right child
-         *
          * @param right the right child to be set
          */
         public void setRight(KDNode right) {
@@ -83,7 +75,6 @@ public class KDTree {
 
         /**
          * Getter for parent
-         *
          * @return the parent of this node
          */
         public KDNode getParent() {
@@ -92,7 +83,6 @@ public class KDTree {
 
         /**
          * Setter for parent
-         *
          * @param parent the parent to be set
          */
         public void setParent(KDNode parent) {
@@ -101,41 +91,10 @@ public class KDTree {
 
         /**
          * Getter for point in this node
-         *
          * @return the point in this node
          */
         public Point getPoint() {
             return point;
-        }
-
-        /**
-         * Getter for the square distance from point in this node to the current query point
-         *
-         * @return the square distance from point in this node to the current query point
-         */
-        public double getSquareDis() {
-            return squareDis;
-        }
-
-        /**
-         * Setter for the square distance from point in this node to the current query point
-         *
-         * @param squareDis the square distance to be set
-         */
-        public void setSquareDis(double squareDis) {
-            this.squareDis = squareDis;
-        }
-
-        /**
-         * Method used in priority queue. KDNode with smaller squareDis will have higher priority
-         *
-         * @param o the other KDNode
-         * @return positive int if squareDis of this node is larger than squareDis of other node,
-         *         negative int if squareDis of this node is smaller than squareDis of other node,
-         *         0 if squareDis of this node equal to squareDis of other node,
-         */
-        public int compareTo(KDNode o) {
-            return Double.compare(squareDis, o.squareDis);
         }
     }
 
@@ -146,15 +105,28 @@ public class KDTree {
      * @param numDim the number of dimension
      */
     public KDTree(int numDim) {
+
         // TODO
     }
 
     /**
      * Build the KD tree from the given set of points
-     *
      * @param points the given set of points to build the KD tree
      */
     public void build(Point[] points) {
+
+        // TODO
+    }
+
+    /**
+     * Find k nearest neighbors of the given query point
+     *
+     * @param point the given query point
+     * @param k number of nearest neighbors
+     * @return an array containing k nearest neighbors
+     */
+    public Point[] findKNearestNeighbor(Point point, int k) {
+
         // TODO
     }
 
@@ -170,20 +142,8 @@ public class KDTree {
      * @return the parent of the subtree
      */
     private KDNode buildSubtree(Point[] points, int start, int end, int d, int height) {
+        
         // TODO
-        return null;
-    }
-
-    /**
-     * Find k nearest neighbors of the given query point
-     *
-     * @param point the given query point
-     * @param k number of nearest neighbors
-     * @return an array containing k nearest neighbors
-     */
-    public Point[] findKNearestNeighbor(Point point, int k) {
-        // TODO
-        return null;
     }
 
     /**
@@ -194,25 +154,22 @@ public class KDTree {
      * @param d the current dimension to look at
      */
     private void findKNNHelper(KDNode n, Point queryPoint, int d) {
+        
         // TODO
     }
 
     /**
-     * Helper method to update the priority queue KNN using the given KD node.
-     * It also updates the maxDisInKNN based when necessary.
+     * Update current KNN with given point. To keep KNN with only K smallest distance points to
+     * the current query point, when size of current KNN reaches K, it will only add
+     * the given point to current KNN if the square distance from given point to query point
+     * is smaller than largestDisInKNN.
      *
-     * @param n the given KD node
+     * The size of KNN should stay as K once it reaches K for the first time.
+     *
+     * @param p the given data point to update if possible
      */
-    private void updateKNN(KDNode n) {
-        // TODO
-    }
+    private void updateKNN(Point p) {
 
-    /**
-     * Helper method to return the node with kth smallest distance in priority queue KNN.
-     *
-     * @return the node with kth smallest distance in priority queue KNN.
-     */
-    private KDNode findkthSmallestNodeInKNN() {
         // TODO
     }
 
