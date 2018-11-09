@@ -12,7 +12,7 @@ import java.util.Scanner;
  * This program takes in 4 command line arguments and outputs a file called "result.txt". The first command line is
  * the choice of K as in KNN. The second one is the name of the training data file. The third one is the name of input
  * data file, which contains the points we want to find their k nearest neighbors. The fourth one is a flag which
- * is either "withLabal" or "withoutLabel"
+ * is either "withLabel" or "withoutLabel"
  *
  * Training data file:
  *
@@ -35,7 +35,7 @@ import java.util.Scanner;
  * which K to choose based on the validation error.
  *
  * Your output file should contains the value of K and its corresponding validation error. For example,
- * if I choose K = 3 and the validation error is 0.1, then the output file should has a single line with:
+ * if we choose K = 3 and the validation error is 0.1, then the output file should has a single line with:
  *
  * K: 3, Validation Error: 0.1
  *
@@ -53,17 +53,33 @@ import java.util.Scanner;
  *
  * Please refer to the write up for more details
  *
- * @author Xindong Cai
- * @since 09-18-2018
  */
 public class KNNClassifier {
+
+    private static final int FLAG_INDEX = 3;
 
     /**
      * The main method that drives this program.
      * @param args the command line argument
      */
     public static void main(String args[]) {
-        // TODO
+        int k = Integer.parseInt(args[0]);
+        String flag = args[FLAG_INDEX];
+
+        // TODO: read the training data and use it to build the KD tree
+        
+        if (flag.equals("withLabel")) {
+            // if data file is with label, it contains validation data
+            Point[] validationData;
+
+            // TODO: compute the validation error
+
+            double errorPercent = (double) errorCount / validationData.length;
+            System.out.println("K: " + k + ", Validation Error: " + errorPercent);
+        }
+        else { 
+            // data file is with out label, it contains data that we want to find KNN
+        }
 
     }
 
@@ -76,26 +92,52 @@ public class KNNClassifier {
      * @return array of data points
      */
     public static Point[] readData(String fileName, boolean withLabel) {
+        try {
+            // get number of data points by counting total lines
+            long lineCount = Files.lines(Paths.get(fileName)).count();
+            Point[] result = new Point[(int)lineCount];
+            int curIndex = 0;
 
-        // TODO
+            Scanner sc = new Scanner(new File(fileName));
+            while (sc.hasNextLine()) {
+                // split each line into data string array by space
+                String[] dataStrings = sc.nextLine().split(" ");
+                int numDimension = withLabel ? dataStrings.length - 1 : dataStrings.length;
+                double[] features = new double[numDimension];
 
+                // convert each string in data strings to double, and put it into features array
+                for (int i = 0; i < numDimension; i++) {
+                    features[i] = Double.parseDouble(dataStrings[i]);
+                }
+                if (withLabel) {
+                    // if data is with label, add point with label to result
+                    int label = Integer.parseInt(dataStrings[dataStrings.length - 1]);
+                    result[curIndex++] = new Point(features, label);
+                }
+                else {
+                    // data is without label, add point with no label to result
+                    result[curIndex++] = new Point(features);
+                }
+            }
+            return result;
+        }
+        catch (IOException e) {
+            System.out.println("File not found!");
+        }
         return null;
     }
 
     /**
-     * Find the most frequent label in array of points. Hint: you should use HashMap
+     * Find the most frequent label in array of points
      *
      * @param points the given array of points
      * @return the most frequent label
      */
     public static int mostFreqLabel(Point[] points) {
+
+        HashMap<Integer, Integer> countMap = new HashMap<>();
+
         // TODO
-
     }
-
-
-
-
-
 
 }
