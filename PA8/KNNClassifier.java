@@ -11,8 +11,7 @@ import java.util.Scanner;
  *
  * This program takes in 4 command line arguments and outputs a file called "result.txt". The first command line is
  * the choice of K as in KNN. The second one is the name of the training data file. The third one is the name of input
- * data file, which contains the points we want to find their k nearest neighbors. The fourth one is a flag which
- * is either "withLabel" or "withoutLabel"
+ * data file. The fourth one is a flag which is either "validation" or "test"
  *
  * Training data file:
  *
@@ -26,7 +25,7 @@ import java.util.Scanner;
  *
  * Input data file:
  *
- * 1. If the fourth argument is "withLabel".
+ * 1. If the fourth argument is "validation".
  *
  * The input data file should have the same format as training data file.
  * In this case we are trying to use input data file as validation data and find the validation error. This should
@@ -39,10 +38,11 @@ import java.util.Scanner;
  *
  * K: 3, Validation Error: 0.1
  *
- * 2. If the fourth argument is "withoutLabel".
+ * 2. If the fourth argument is "test".
  *
  * Each line of the input data file should only contains the features of this data, with no label following.
- * In this case we are trying to find the k nearest neighbors of the data in each line of input file.
+ * In this case we are trying to use input data file as test data and find the k nearest neighbors of data 
+ * in each line of input file.
  *
  * Each line of your output file should contains the predicted label for the data in the corresponding line of input
  * data file. For example, if input file has 2 lines of data, and your KNN classifier predict that the label for both
@@ -66,11 +66,12 @@ public class KNNClassifier {
         int k = Integer.parseInt(args[0]);
         String flag = args[FLAG_INDEX];
 
-        // TODO: read the training data and use it to build the KD tree
+        // TODO: read the training data and use it to build KNN training data
         
-        if (flag.equals("withLabel")) {
+        if (flag.equals("validation")) {
             // if data file is with label, it contains validation data
             Point[] validationData;
+            int errorCount = 0;
 
             // TODO: compute the validation error
 
@@ -78,7 +79,7 @@ public class KNNClassifier {
             System.out.println("K: " + k + ", Validation Error: " + errorPercent);
         }
         else { 
-            // data file is with out label, it contains data that we want to find KNN
+            // data file is test data, it contains data that we want to find KNN
         }
 
     }

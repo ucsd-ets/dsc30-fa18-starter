@@ -121,11 +121,11 @@ public class KDTree {
     /**
      * Find k nearest neighbors of the given query point
      *
-     * @param point the given query point
+     * @param queryPoint the given query point
      * @param k number of nearest neighbors
      * @return an array containing k nearest neighbors
      */
-    public Point[] findKNearestNeighbor(Point point, int k) {
+    public Point[] findKNearestNeighbor(Point queryPoint, int k) {
 
         // TODO
     }
