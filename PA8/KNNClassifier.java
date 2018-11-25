@@ -80,6 +80,7 @@ public class KNNClassifier {
         }
         else { 
             // data file is test data, it contains data that we want to find KNN
+            //TODO
         }
 
     }
