@@ -19,7 +19,7 @@ PriceCenter,1750,2750
 SolisHall,950,2250
 Geisel,1600,2200
 WarrenLectureHall,2500,2350
-Jacob,2250,2000
+Jacobs,2250,2000
 Marshall,500,2000
 CSE,2700,2000
 OceanView,100,1500
