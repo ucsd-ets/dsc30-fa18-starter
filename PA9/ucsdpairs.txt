@@ -9,6 +9,7 @@ BioMedLib,CenterHall,1
 MainGym,Mandeville,1
 MainGym,Muir,1
 MainGym,APM,1
+Muir,APM,1
 Mandeville,CenterHall,1
 Mandeville,APM,1
 Mandeville,Muir,1
@@ -37,6 +38,7 @@ PriceCenter,WarrenLectureHall,1
 PriceCenter,SolisHall,1
 SolisHall,Marshall,1
 SolisHall,Geisel,1
+SolisHall,HopkinsParking,1
 Geisel,HopkinsParking,1
 Geisel,WarrenLectureHall,1
 Geisel,Jacob,1
@@ -49,7 +51,6 @@ Marshall,OceanView,1
 CSE,Warren,1
 CSE,HopkinsParking,1
 OceanView,PangeaParking,1
-OceanView,HopkinsParking,1
 PangeaParking,HopkinsParking,1
 PangeaParking,ERC,1
 PangeaParking,SupercomputerCenter,1
